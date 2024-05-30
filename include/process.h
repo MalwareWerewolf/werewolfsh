@@ -1,6 +1,6 @@
 #ifndef LAUNCH_H
 #define LAUNCH_H
 
-int lsh_launch(char **args);
+int werewolfsh_launch(char **args);
 
 #endif

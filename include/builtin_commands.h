@@ -1,10 +1,10 @@
 #ifndef BUILTIN_COMMANDS_H
 #define BUILTIN_COMMANDS_H
 
-int lsh_num_builtins();
-int lsh_cd(char **args);
-int lsh_help();
-int lsh_exit();
-int lsh_execute(char **args);
+int werewolfsh_num_builtins();
+int werewolfsh_cd(char **args);
+int werewolfsh_help();
+int werewolfsh_exit();
+int werewolfsh_execute(char **args);
 
 #endif

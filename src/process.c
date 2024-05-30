@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int lsh_launch(char **args)
+int werewolfsh_launch(char **args)
 {
     pid_t pid;
     int status;
@@ -16,14 +16,14 @@ int lsh_launch(char **args)
         // Child process
         if (execvp(args[0], args) == -1)
         {
-            perror("lsh");
+            perror("werewolfsh");
         }
         exit(EXIT_FAILURE);
     }
     else if (pid < 0)
     {
         // Error forking
-        perror("lsh");
+        perror("werewolfsh");
     }
     else
     {

@@ -12,17 +12,17 @@ char *builtin_str[] = {
 };
 
 int (*builtin_func[])(char **) = {
-    &lsh_cd,
-    &lsh_help,
-    &lsh_exit
+    &werewolfsh_cd,
+    &werewolfsh_help,
+    &werewolfsh_exit
 };
 
-int lsh_num_builtins()
+int werewolfsh_num_builtins()
 {
     return sizeof(builtin_str) / sizeof(char *);
 }
 
-int lsh_cd(char **args)
+int werewolfsh_cd(char **args)
 {
     if (args[1] == NULL)
     {
@@ -32,19 +32,19 @@ int lsh_cd(char **args)
     {
         if (chdir(args[1]) != 0)
         {
-            perror("lsh");
+            perror("werewolfsh");
         }
     }
     return 1;
 }
 
-int lsh_help()
+int werewolfsh_help()
 {
     int i;
     printf("Type program names and arguments, and hit enter.\n");
     printf("The following are built in:\n");
 
-    for (i = 0; i < lsh_num_builtins(); i++)
+    for (i = 0; i < werewolfsh_num_builtins(); i++)
     {
         printf("  %s\n", builtin_str[i]);
     }
@@ -53,12 +53,12 @@ int lsh_help()
     return 1;
 }
 
-int lsh_exit()
+int werewolfsh_exit()
 {
     return 0;
 }
 
-int lsh_execute(char **args)
+int werewolfsh_execute(char **args)
 {
     int i;
 
@@ -68,7 +68,7 @@ int lsh_execute(char **args)
         return 1;
     }
 
-    for (i = 0; i < lsh_num_builtins(); i++)
+    for (i = 0; i < werewolfsh_num_builtins(); i++)
     {
         if (strcmp(args[0], builtin_str[i]) == 0)
         {
@@ -76,5 +76,5 @@ int lsh_execute(char **args)
         }
     }
 
-    return lsh_launch(args);
+    return werewolfsh_launch(args);
 }

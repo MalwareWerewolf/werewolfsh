@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void lsh_loop(void)
+void werewolfsh_loop(void)
 {
     char *line;
     char **args;
@@ -12,9 +12,9 @@ void lsh_loop(void)
     do
     {
         printf("> ");
-        line = lsh_read_line();
-        args = lsh_split_line(line);
-        status = lsh_execute(args);
+        line = werewolfsh_read_line();
+        args = werewolfsh_split_line(line);
+        status = werewolfsh_execute(args);
         
         free(line);
         free(args);
@@ -33,7 +33,7 @@ void welcomeScreen()
 int main()
 {
     welcomeScreen();
-    lsh_loop();
+    werewolfsh_loop();
 
     return EXIT_SUCCESS;
 }
