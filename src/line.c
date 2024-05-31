@@ -1,4 +1,6 @@
 #include "line.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
@@ -8,18 +10,18 @@ char *werewolfsh_read_line()
     int position = 0;
     char *buffer = malloc(sizeof(char) * bufsize);
     int c;
-
+    
     if (!buffer)
     {
         fprintf(stderr, "werewolfsh: allocation error\n");
         exit(EXIT_FAILURE);
     }
-
+    
     while (true)
     {
-        // Read a character       
+        // Read a character
         c = getchar();
-
+        
         // If we hit EOF, replace it with a null character and return.
         if (c == EOF || c == '\n')
         {
@@ -31,7 +33,7 @@ char *werewolfsh_read_line()
             buffer[position] = c;
         }
         position++;
-
+        
         // If we have exceeded the buffer, reallocate.
         if (position >= bufsize)
         {
@@ -51,19 +53,19 @@ char **werewolfsh_split_line(char *line)
     int bufsize = WEREWOLFSH_TOK_BUFSIZE, position = 0;
     char **tokens = malloc(bufsize * sizeof(char *));
     char *token;
-
+    
     if (!tokens)
     {
         fprintf(stderr, "werewolfsh: allocation error\n");
         exit(EXIT_FAILURE);
     }
-
+    
     token = strtok(line, WEREWOLFSH_TOK_DELIM);
     while (token != NULL)
     {
         tokens[position] = token;
         position++;
-
+        
         if (position >= bufsize)
         {
             bufsize += WEREWOLFSH_TOK_BUFSIZE;
@@ -74,7 +76,7 @@ char **werewolfsh_split_line(char *line)
                 exit(EXIT_FAILURE);
             }
         }
-
+        
         token = strtok(NULL, WEREWOLFSH_TOK_DELIM);
     }
     tokens[position] = NULL;
