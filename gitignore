@@ -1,0 +1,118 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+
+# Shared objects (shared libraries)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# Debug files
+*.dSYM/
+*.dSStore
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS system files
+Icon?
+._*
+
+# Thumbnails
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Compiled source files
+*.com
+*.class
+*.fasl
+*.fas
+*.dx64fsl
+*.lo
+*.lai
+*.la
+*.mod
+*.ko
+
+# Log files
+*.log
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Directories created by popular tools
+.idea/
+.vscode/
+.c9/
+*.code-workspace
+
+# Local IDE configurations
+*.swp
+*.swo
+*.user
+*.workspace
+.vscode/
+
+# Project files that should be excluded
+bin/
+build/
+*.bak
+*.tmp
+*.temp
+
+# Temporary files
+*.temp
+*.tmp
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Markdown editor settings
+.markdown-toc
+
+# CCache files
+ccache/
+
+# MacPorts
+/opt/local
+
+# Homebrew
+/usr/local/Cellar
+/usr/local/Homebrew

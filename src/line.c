@@ -1,7 +1,8 @@
 #include "line.h"
 #include <string.h>
+#include <stdbool.h>
 
-char *werewolfsh_read_line(void)
+char *werewolfsh_read_line()
 {
     int bufsize = WEREWOLFSH_RL_BUFSIZE;
     int position = 0;
@@ -14,7 +15,7 @@ char *werewolfsh_read_line(void)
         exit(EXIT_FAILURE);
     }
 
-    while (1)
+    while (true)
     {
         // Read a character       
         c = getchar();
