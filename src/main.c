@@ -3,24 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void werewolfsh_loop(void)
-{
-    char *line;
-    char **args;
-    int status;
-
-    do
-    {
-        printf("> ");
-        line = werewolfsh_read_line();
-        args = werewolfsh_split_line(line);
-        status = werewolfsh_execute(args);
-        
-        free(line);
-        free(args);
-    } while (status);
-}
-
 void welcomeScreen()
 {
     printf("\n-------------------------------------------------\n");
@@ -32,8 +14,22 @@ void welcomeScreen()
 
 int main()
 {
+    char *line;
+    char **args;
+    int status;
+
     welcomeScreen();
-    werewolfsh_loop();
+
+    do
+    {
+        printf("> ");
+        line = werewolfsh_read_line();
+        args = werewolfsh_split_line(line);
+        status = werewolfsh_execute(args);
+
+        free(line);
+        free(args);
+    } while (status);
 
     return EXIT_SUCCESS;
 }
