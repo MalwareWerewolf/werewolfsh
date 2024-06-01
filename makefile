@@ -1,5 +1,5 @@
 # Variables
-CC = gcc
+CC = clang
 CFLAGS = -Iinclude -Wall -Wextra -Werror -g
 SRC_DIR = src
 INCLUDE_DIR = include
