@@ -4,7 +4,7 @@ CFLAGS = -Iinclude -Wall -Wextra -Werror -g
 SRC_DIR = src
 INCLUDE_DIR = include
 BIN_DIR = bin
-TARGET = $(BIN_DIR)/program
+TARGET = $(BIN_DIR)/main
 
 # Find all .c files in src/ directory
 SRCS = $(wildcard $(SRC_DIR)/*.c)
